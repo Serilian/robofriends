@@ -1,8 +1,8 @@
-import {CHANGE_SEARCH_FIELD} from "./constans";
+import {CHANGE_SEARCH_FIELD} from "../constans";
 import {
     REQUEST_ROBOTS_FAILED,
     REQUEST_ROBOTS_PENDING,
-    REQUEST_ROBOTS_SUCCESS} from "./constans";
+    REQUEST_ROBOTS_SUCCESS} from "../constans";
 
 
 export const  setSearchField = (text) => ({
