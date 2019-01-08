@@ -9,7 +9,7 @@ describe('searchRobots reducer', () => {
     };
 
     it('should return initial state', () => {
-        expect(reducers.searchRobots(undefined, {})).toEqual({
+        expect(reducers.searchRobots(undefined, undefined)).toEqual({
             searchfield: ''
         })
     });
@@ -33,7 +33,7 @@ describe('requestRobots reducer', () => {
     };
 
     it('should return initial state', () => {
-        expect(reducers.requestRobots(undefined, {})).toEqual(initialRobotsState)
+        expect(reducers.requestRobots(undefined, undefined)).toEqual(initialRobotsState)
     });
 
     it('should handle REQUEST_ROBOTS_PENDING event', () => {
