@@ -1,36 +1,36 @@
-import React, {Component} from 'react';
-import './App.css';
-import {requestRobots, setSearchField} from "../actions";
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import "./App.css";
+import { requestRobots, setSearchField } from "../actions";
+import { connect } from "react-redux";
 import MainPage from "../components/MainPage";
 
 const mapStateToProps = state => {
-    return {
-        searchfield: state.searchRobots.searchfield,
-        robots: state.requestRobots.robots,
-        isPending: state.requestRobots.isPending,
-        error: state.requestRobots.error
-    }
+  return {
+    searchfield: state.searchRobots.searchfield,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
+  };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onSearchChange: (event) => {
-            dispatch(setSearchField(event.target.value))
-        },
-        onRequestRobots: () => {
-          dispatch(requestRobots());
-        }
+const mapDispatchToProps = dispatch => {
+  return {
+    onSearchChange: event => {
+      dispatch(setSearchField(event.target.value));
+    },
+    onRequestRobots: () => {
+      dispatch(requestRobots());
     }
+  };
 };
 
 class App extends Component {
-
-
-    render() {
-        return (
-            <MainPage {...this.props}/>)
-    }
+  render() {
+    return <MainPage {...this.props} />;
+  }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
